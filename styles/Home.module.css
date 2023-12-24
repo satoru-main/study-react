@@ -7,6 +7,13 @@
   min-height: 100vh;
 }
 
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-transform: capitalize;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
