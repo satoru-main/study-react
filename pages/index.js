@@ -19,7 +19,7 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <Headline page="index"></Headline>
         <Links></Links>
-        <Footer></Footer>
+        <Footer />
       </main>
     </>
   )
