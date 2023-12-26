@@ -10,7 +10,6 @@ export function Headline(props) {
                     Get started by editing&nbsp;
                     {props.children}
                 </p>
-                <button onClick={props.onClick}>ボタン</button>
             </div>
         </div>
     )
