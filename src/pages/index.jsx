@@ -12,13 +12,6 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [count, setCount] = useState(1)
-  // let foo = 1;
-
-  // const handleClick = useCallback((e) => {
-  //   console.log(e.target.href);
-  //   e.preventDefault();
-  //   alert(foo);
-  // }, []);
   
   const handleClick = (e) => {
     setCount((count) => count + 1);
