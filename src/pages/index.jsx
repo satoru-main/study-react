@@ -50,7 +50,7 @@ export default function Home() {
       <button onClick={handleClick}>ボタン</button>
       <button
         onClick={handleDisplay}>
-        {isShow ? "非表示" : "表示"}
+        {isShow ? "非表示" : "表示!"}
       </button>
 
       <input type="text" value={text} onChange={handleChange} />
