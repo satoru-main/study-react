@@ -1,19 +1,15 @@
 import Head from 'next/head'
+import styles from '@/src/styles/Home.module.css'
 import { Footer } from '@/src/components/Footer'
 import { Main } from '@/src/components/Main'
-import styles from '@/src/styles/Home.module.css'
 import { Header } from '@/src/components/Header'
 import { useCallback, useEffect, useState } from 'react'
-
-// const handleClick = (e) => {
-//   console.log(e.target.href);
-//   e.preventDefault();
-// }
 
 export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("a");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([1,2,3]);
 
   const handleClick = (e) => {
     setCount((count) => count + 1);
@@ -54,6 +50,11 @@ export default function Home() {
       </button>
 
       <input type="text" value={text} onChange={handleChange} />
+      <ul>
+        {array.map((item) => {
+          return <div key={item}>{item}</div>;
+        })}
+      </ul>
       <Main page="index" />
       <Footer />
     </div >
