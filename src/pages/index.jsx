@@ -9,7 +9,7 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("a");
   const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([1,2,3]);
+  const [array, setArray] = useState([]);
 
   const handleClick = (e) => {
     if(count < 10){
@@ -29,6 +29,16 @@ export default function Home() {
     setText(e.target.value.trim());
   }, []);
 
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) =>{
+      if (prevArray.some(item => item === text)){
+        alert("同じ要素があります");
+        return prevArray;
+      }
+       return [...prevArray, text];
+    });
+  }, [text])
+
   useEffect(() => {
     console.log("maunt");
     document.body.style.backgroundColor = "lightblue";
@@ -45,12 +55,9 @@ export default function Home() {
       <Header></Header>
       {isShow ? <h1>{count}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
-      <button
-        onClick={handleDisplay}>
-        {isShow ? "非表示" : "表示!"}
-      </button>
-
+      <button onClick={handleDisplay}> {isShow ? "非表示" : "表示!"} </button>
       <input type="text" value={text} onChange={handleChange} />
+      <button onClick={handleAdd}>追加</button>
       <ul>
         {array.map((item) => {
           return <div key={item}>{item}</div>;
