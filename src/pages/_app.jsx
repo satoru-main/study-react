@@ -6,7 +6,7 @@ import { useBgLightBlue } from '../hooks/useBgLightBlue'
 
 
 export default function App({ Component, pageProps }) {
-
+  console.log(pageProps);
   const counter = useCounter();
   const inputArray = useInputArray();
   useBgLightBlue();
