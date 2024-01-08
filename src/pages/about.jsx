@@ -3,13 +3,11 @@ import { Footer } from '@/src/components/Footer'
 import { Main } from '@/src/components/Main'
 import styles from '@/src/styles/Home.module.css'
 import { Header } from '@/src/components/Header'
-import { useCounter } from '../hooks/useCounter'
-import { useInputArray } from '../hooks/useInputArray'
 import { useBgLightBlue } from '../hooks/useBgLightBlue'
 
-export default function About() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
+export default function About(props) {
+  console.log(props);
+  const { count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } = props;
   useBgLightBlue();
   
   return (
@@ -17,6 +15,7 @@ export default function About() {
       <Head>
         <title>Create Next App_about </title>
       </Head>
+      <Header></Header>
       {isShow ? <h1>{count}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}> {isShow ? "非表示" : "表示!"} </button>
@@ -27,7 +26,7 @@ export default function About() {
           return <div key={item}>{item}</div>;
         })}
       </ul>
-      <Header></Header>
+
       <Main page="about" />
       <Footer />
     </div>
