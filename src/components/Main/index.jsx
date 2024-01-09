@@ -24,7 +24,7 @@ const ITEMS = [
     description: "Instantly deploy your Next.js site to a shareable URL with&nbsp;Vercel."
   }
 ]
-export function Main(props) {
+export const Main = (props) => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems(prevItems => {
