@@ -3,12 +3,12 @@ import { Footer } from '@/src/components/Footer'
 import { Main } from '@/src/components/Main'
 import styles from '@/src/styles/Home.module.css'
 import { Header } from '@/src/components/Header'
-import { useBgLightBlue } from '../hooks/useBgLightBlue'
+import { useBgColor } from '../hooks/useBgColor'
 
 export default function About(props) {
-  console.log(props);
-  const { count, doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } = props;
-  useBgLightBlue();
+  // console.log(props);
+  const { doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } = props;
+  useBgColor();
   
   return (
     <div className={styles.container}>
